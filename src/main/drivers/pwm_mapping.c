@@ -603,8 +603,8 @@ static const uint16_t airPWM[] = {
 #ifdef BLUEJAYF4
 static const uint16_t multiPPM[] = {
     PWM1  | (MAP_TO_PPM_INPUT << 8),     // PPM input
-    PWM2  | (MAP_TO_MOTOR_OUTPUT << 8),     
-    PWM3  | (MAP_TO_MOTOR_OUTPUT << 8),    
+    PWM2  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM3  | (MAP_TO_MOTOR_OUTPUT << 8),
     PWM4  | (MAP_TO_MOTOR_OUTPUT << 8),
     PWM5  | (MAP_TO_MOTOR_OUTPUT << 8),
     PWM6  | (MAP_TO_MOTOR_OUTPUT << 8),
@@ -613,13 +613,13 @@ static const uint16_t multiPPM[] = {
 };
 
 static const uint16_t multiPWM[] = {
-    PWM1  | (MAP_TO_PWM_INPUT << 8), 
+    PWM1  | (MAP_TO_PWM_INPUT << 8),
     PWM2  | (MAP_TO_MOTOR_OUTPUT << 8),
     PWM3  | (MAP_TO_MOTOR_OUTPUT << 8),
     PWM4  | (MAP_TO_MOTOR_OUTPUT << 8),
     PWM5  | (MAP_TO_MOTOR_OUTPUT << 8),
-    PWM6  | (MAP_TO_MOTOR_OUTPUT  << 8),     
-    PWM7  | (MAP_TO_MOTOR_OUTPUT  << 8),    
+    PWM6  | (MAP_TO_MOTOR_OUTPUT  << 8),
+    PWM7  | (MAP_TO_MOTOR_OUTPUT  << 8),
     0xFFFF
 };
 
@@ -964,6 +964,138 @@ static const uint16_t airPWM[] = {
 };
 #endif
 
+#if defined(CKD_F3FC)
+static const uint16_t multiPPM[] = {
+    // These are the TIM pins on the butterfly connector.
+    PWM1  | (MAP_TO_PPM_INPUT << 8), // debug swclk
+    PWM2  | (MAP_TO_SERVO_OUTPUT << 8), // PPM input
+    PWM3  | (MAP_TO_SERVO_OUTPUT << 8),
+    PWM4  | (MAP_TO_SERVO_OUTPUT << 8),
+
+    // These are the four through-hole headers on the board.
+    PWM5  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM6  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM7  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM8  | (MAP_TO_MOTOR_OUTPUT << 8),
+
+    // These are TIMG1. They can be anything.
+    PWM9  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM10 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM11 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM12 | (MAP_TO_MOTOR_OUTPUT << 8),
+
+    // These are TIMG2. They can be anything.
+    PWM13 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM14 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM15 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM16 | (MAP_TO_MOTOR_OUTPUT << 8),
+    0xFFFF
+};
+
+static const uint16_t multiPWM[] = {
+    // These are the TIM pins on the butterfly connector.
+    PWM1  | (MAP_TO_SERVO_OUTPUT << 8), // PPM input
+    PWM2  | (MAP_TO_SERVO_OUTPUT << 8),
+    PWM3  | (MAP_TO_SERVO_OUTPUT << 8),
+    PWM4  | (MAP_TO_SERVO_OUTPUT << 8),
+
+    // These are the four through-hole headers on the board.
+    PWM5  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM6  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM7  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM8  | (MAP_TO_MOTOR_OUTPUT << 8),
+
+    // These are TIMG1. They can be anything.
+    PWM9  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM10 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM11 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM12 | (MAP_TO_MOTOR_OUTPUT << 8),
+
+    // These are TIMG2. They can be anything.
+    PWM13 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM14 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM15 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM16 | (MAP_TO_MOTOR_OUTPUT << 8),
+    0xFFFF
+};
+
+static const uint16_t airPPM[] = {
+    // TODO
+    0xFFFF
+};
+
+static const uint16_t airPWM[] = {
+    // TODO
+    0xFFFF
+};
+#endif
+
+#if defined(CKD_F4FC)
+static const uint16_t multiPPM[] = {
+    // These are the TIM pins on the butterfly connector.
+    PWM1  | (MAP_TO_PPM_INPUT << 8), // debug swclk
+    PWM2  | (MAP_TO_SERVO_OUTPUT << 8), // PPM input
+    PWM3  | (MAP_TO_SERVO_OUTPUT << 8),
+    PWM4  | (MAP_TO_SERVO_OUTPUT << 8),
+
+    // These are the four through-hole headers on the board.
+    PWM5  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM6  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM7  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM8  | (MAP_TO_MOTOR_OUTPUT << 8),
+
+    // These are TIMG1. They can be anything.
+    PWM9  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM10 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM11 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM12 | (MAP_TO_MOTOR_OUTPUT << 8),
+
+    // These are TIMG2. They can be anything.
+    PWM13 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM14 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM15 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM16 | (MAP_TO_MOTOR_OUTPUT << 8),
+    0xFFFF
+};
+
+static const uint16_t multiPWM[] = {
+    // These are the TIM pins on the butterfly connector.
+    PWM1  | (MAP_TO_SERVO_OUTPUT << 8), // PPM input
+    PWM2  | (MAP_TO_SERVO_OUTPUT << 8),
+    PWM3  | (MAP_TO_SERVO_OUTPUT << 8),
+    PWM4  | (MAP_TO_SERVO_OUTPUT << 8),
+
+    // These are the four through-hole headers on the board.
+    PWM5  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM6  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM7  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM8  | (MAP_TO_MOTOR_OUTPUT << 8),
+
+    // These are TIMG1. They can be anything.
+    PWM9  | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM10 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM11 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM12 | (MAP_TO_MOTOR_OUTPUT << 8),
+
+    // These are TIMG2. They can be anything.
+    PWM13 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM14 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM15 | (MAP_TO_MOTOR_OUTPUT << 8),
+    PWM16 | (MAP_TO_MOTOR_OUTPUT << 8),
+    0xFFFF
+};
+
+static const uint16_t airPPM[] = {
+    // TODO
+    0xFFFF
+};
+
+static const uint16_t airPWM[] = {
+    // TODO
+    0xFFFF
+};
+#endif
+
 static const uint16_t * const hardwareMaps[] = {
     multiPWM,
     multiPPM,
@@ -1149,7 +1281,7 @@ if (init->useBuzzerP6) {
         if (init->useChannelForwarding && !init->airplane) {
 #if defined(NAZE) && defined(LED_STRIP_TIMER)
             // if LED strip is active, PWM5-8 are unavailable, so map AUX1+AUX2 to PWM13+PWM14
-            if (init->useLEDStrip) { 
+            if (init->useLEDStrip) {
                 if (timerIndex >= PWM13 && timerIndex <= PWM14) {
                   type = MAP_TO_SERVO_OUTPUT;
                 }
@@ -1216,13 +1348,13 @@ if (init->useBuzzerP6) {
             pwmInConfig(timerHardwarePtr, channelIndex);
             channelIndex++;
         } else if (type == MAP_TO_MOTOR_OUTPUT) {
-            if (init->useOneshot) 
+            if (init->useOneshot)
             {
-                if (init->useFastPWM) 
+                if (init->useFastPWM)
                 {
                     fastPWMMotorConfig(timerHardwarePtr, pwmOutputConfiguration.motorCount, init->motorPwmRate, init->idlePulse);
-                } 
-                else 
+                }
+                else
                 {
                     if (init->usePwmRate)
                     {
@@ -1234,7 +1366,7 @@ if (init->useBuzzerP6) {
                     }
                 }
                 pwmOutputConfiguration.portConfigurations[pwmOutputConfiguration.outputCount].flags = PWM_PF_MOTOR | PWM_PF_OUTPUT_PROTOCOL_ONESHOT|PWM_PF_OUTPUT_PROTOCOL_PWM ;
-            } 
+            }
             else if (init->useMultiShot) {
                 if (init->usePwmRate)
                 {
