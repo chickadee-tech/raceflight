@@ -26,6 +26,9 @@
 #define LED1 PC14
 #define LED2 PC15
 
+#define BEEPER PA13
+#define BEEPER_INVERTED
+
 #define MPU6000_CS_PIN        PA4
 #define MPU6000_SPI_INSTANCE  SPI1
 
@@ -55,6 +58,7 @@
 #define USE_USART1
 #define USART1_RX_PIN PA10
 #define USART1_TX_PIN PA9
+#define USART1_AHB1_PERIPHERALS RCC_AHB1Periph_DMA2
 
 #define USE_USART2
 #define USART2_RX_PIN PD6
@@ -78,8 +82,8 @@
 
 #define SERIAL_PORT_COUNT 7
 
-#define USE_ESCSERIAL
-#define ESCSERIAL_TIMER_TX_HARDWARE 0
+//#define USE_ESCSERIAL
+//#define ESCSERIAL_TIMER_TX_HARDWARE 0
 
 #define USE_SPI
 
@@ -104,9 +108,9 @@
 #define USE_I2C
 #define I2C_DEVICE (I2CDEV_1)
 
-// #define USE_ADC
-// #define VBAT_ADC_PIN                PC12
-// #define VBAT_ADC_CHANNEL            ADC_Channel_13
+#define USE_ADC
+#define VBAT_ADC_PIN                PC5
+#define VBAT_ADC_CHANNEL            ADC_Channel_15
 
 //#define GPS
 //#define BLACKBOX
